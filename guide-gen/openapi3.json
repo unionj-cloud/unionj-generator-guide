@@ -1,0 +1,1273 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "用户管理模块",
+    "version" : "v1.0.0"
+  },
+  "servers" : [ {
+    "url" : "http://unionj.cloud"
+  } ],
+  "paths" : {
+    "/api/user/avatar" : {
+      "get" : {
+        "tags" : [ "用户管理模块", "User" ],
+        "summary" : "用户头像下载接口",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "description" : "用户ID",
+          "required" : true,
+          "deprecated" : false,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "explode" : false,
+          "allowReserved" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/octet-stream" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary",
+                  "uniqueItems" : false,
+                  "deprecated" : false,
+                  "nullable" : false,
+                  "tree" : false
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer",
+                      "format" : "int32",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "msg" : {
+                      "type" : "string",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "data" : {
+                      "type" : "string",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    }
+                  },
+                  "uniqueItems" : false,
+                  "deprecated" : false,
+                  "nullable" : false,
+                  "tree" : false
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer",
+                      "format" : "int32",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "msg" : {
+                      "type" : "string",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "data" : {
+                      "type" : "string",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    }
+                  },
+                  "uniqueItems" : false,
+                  "deprecated" : false,
+                  "nullable" : false,
+                  "tree" : false
+                }
+              }
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/api/user/detail" : {
+      "get" : {
+        "tags" : [ "用户管理模块", "User" ],
+        "summary" : "用户信息查询接口",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "description" : "用户ID",
+          "required" : true,
+          "deprecated" : false,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "explode" : false,
+          "allowReserved" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "title" : "ResultVO«UserDetailVO»",
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer",
+                      "format" : "int32",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "msg" : {
+                      "type" : "string",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "data" : {
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "$ref" : "#/components/schemas/UserDetailVO",
+                      "tree" : false
+                    }
+                  },
+                  "uniqueItems" : false,
+                  "deprecated" : false,
+                  "nullable" : false,
+                  "tree" : false
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer",
+                      "format" : "int32",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "msg" : {
+                      "type" : "string",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "data" : {
+                      "type" : "string",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    }
+                  },
+                  "uniqueItems" : false,
+                  "deprecated" : false,
+                  "nullable" : false,
+                  "tree" : false
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer",
+                      "format" : "int32",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "msg" : {
+                      "type" : "string",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "data" : {
+                      "type" : "string",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    }
+                  },
+                  "uniqueItems" : false,
+                  "deprecated" : false,
+                  "nullable" : false,
+                  "tree" : false
+                }
+              }
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/api/user/edit" : {
+      "post" : {
+        "tags" : [ "用户管理模块", "User" ],
+        "summary" : "用户信息编辑接口",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "description" : "用户ID",
+          "required" : true,
+          "deprecated" : false,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "explode" : false,
+          "allowReserved" : false
+        } ],
+        "requestBody" : {
+          "content" : {
+            "multipart/form-data" : {
+              "schema" : {
+                "title" : "UserEditFormVO",
+                "type" : "object",
+                "properties" : {
+                  "name" : {
+                    "type" : "string",
+                    "description" : "真实姓名",
+                    "uniqueItems" : false,
+                    "deprecated" : false,
+                    "nullable" : false,
+                    "tree" : false
+                  },
+                  "age" : {
+                    "type" : "integer",
+                    "format" : "int32",
+                    "description" : "年龄",
+                    "uniqueItems" : false,
+                    "deprecated" : false,
+                    "nullable" : false,
+                    "tree" : false
+                  },
+                  "sex" : {
+                    "type" : "string",
+                    "description" : "性别",
+                    "uniqueItems" : false,
+                    "deprecated" : false,
+                    "nullable" : false,
+                    "tree" : false,
+                    "enum" : [ "BOY", "GIRL" ]
+                  },
+                  "avatar" : {
+                    "type" : "string",
+                    "format" : "binary",
+                    "description" : "用户头像",
+                    "uniqueItems" : false,
+                    "deprecated" : false,
+                    "nullable" : false,
+                    "tree" : false
+                  }
+                },
+                "description" : "用户信息编辑表单",
+                "uniqueItems" : false,
+                "deprecated" : false,
+                "nullable" : false,
+                "tree" : false
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "title" : "ResultVO«String»",
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer",
+                      "format" : "int32",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "msg" : {
+                      "type" : "string",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "data" : {
+                      "type" : "string",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    }
+                  },
+                  "uniqueItems" : false,
+                  "deprecated" : false,
+                  "nullable" : false,
+                  "tree" : false
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer",
+                      "format" : "int32",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "msg" : {
+                      "type" : "string",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "data" : {
+                      "type" : "string",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    }
+                  },
+                  "uniqueItems" : false,
+                  "deprecated" : false,
+                  "nullable" : false,
+                  "tree" : false
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer",
+                      "format" : "int32",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "msg" : {
+                      "type" : "string",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "data" : {
+                      "type" : "string",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    }
+                  },
+                  "uniqueItems" : false,
+                  "deprecated" : false,
+                  "nullable" : false,
+                  "tree" : false
+                }
+              }
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/api/user/page" : {
+      "post" : {
+        "tags" : [ "用户管理模块", "User" ],
+        "summary" : "用户分页列表接口",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "title" : "UserPageReqVO",
+                "type" : "object",
+                "properties" : {
+                  "size" : {
+                    "type" : "integer",
+                    "format" : "int32",
+                    "description" : "每页多少条数据",
+                    "uniqueItems" : false,
+                    "deprecated" : false,
+                    "nullable" : false,
+                    "tree" : false
+                  },
+                  "current" : {
+                    "type" : "integer",
+                    "format" : "int32",
+                    "description" : "第几页",
+                    "uniqueItems" : false,
+                    "deprecated" : false,
+                    "nullable" : false,
+                    "tree" : false
+                  },
+                  "sort" : {
+                    "type" : "string",
+                    "description" : "排序条件字符串：排序字段前使用'-'(降序)和'+'(升序)号表示排序规则，多个排序字段用','隔开",
+                    "uniqueItems" : false,
+                    "example" : "+age,-create_at",
+                    "deprecated" : false,
+                    "nullable" : false,
+                    "tree" : false
+                  },
+                  "sex" : {
+                    "type" : "string",
+                    "description" : "筛选条件：用户性别",
+                    "uniqueItems" : false,
+                    "deprecated" : false,
+                    "nullable" : false,
+                    "tree" : false
+                  }
+                },
+                "description" : "用户列表分页查询条件",
+                "uniqueItems" : false,
+                "deprecated" : false,
+                "nullable" : false,
+                "tree" : false
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "title" : "ResultVO«PageResultVO«UserDetailVO»»",
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer",
+                      "format" : "int32",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "msg" : {
+                      "type" : "string",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "data" : {
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "$ref" : "#/components/schemas/PageResultVO«UserDetailVO»",
+                      "tree" : false
+                    }
+                  },
+                  "uniqueItems" : false,
+                  "deprecated" : false,
+                  "nullable" : false,
+                  "tree" : false
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer",
+                      "format" : "int32",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "msg" : {
+                      "type" : "string",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "data" : {
+                      "type" : "string",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    }
+                  },
+                  "uniqueItems" : false,
+                  "deprecated" : false,
+                  "nullable" : false,
+                  "tree" : false
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer",
+                      "format" : "int32",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "msg" : {
+                      "type" : "string",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "data" : {
+                      "type" : "string",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    }
+                  },
+                  "uniqueItems" : false,
+                  "deprecated" : false,
+                  "nullable" : false,
+                  "tree" : false
+                }
+              }
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/api/user/register" : {
+      "post" : {
+        "tags" : [ "用户管理模块", "User" ],
+        "summary" : "用户注册接口",
+        "requestBody" : {
+          "content" : {
+            "multipart/form-data" : {
+              "schema" : {
+                "title" : "UserRegisterFormVO",
+                "type" : "object",
+                "properties" : {
+                  "username" : {
+                    "type" : "string",
+                    "description" : "用户名",
+                    "uniqueItems" : false,
+                    "deprecated" : false,
+                    "nullable" : false,
+                    "tree" : false
+                  },
+                  "password" : {
+                    "type" : "string",
+                    "description" : "密码",
+                    "uniqueItems" : false,
+                    "deprecated" : false,
+                    "nullable" : false,
+                    "tree" : false
+                  }
+                },
+                "description" : "用户注册表单",
+                "uniqueItems" : false,
+                "deprecated" : false,
+                "nullable" : false,
+                "tree" : false
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "title" : "ResultVO«UserRegisterRespVO»",
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer",
+                      "format" : "int32",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "msg" : {
+                      "type" : "string",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "data" : {
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "$ref" : "#/components/schemas/UserRegisterRespVO",
+                      "tree" : false
+                    }
+                  },
+                  "uniqueItems" : false,
+                  "deprecated" : false,
+                  "nullable" : false,
+                  "tree" : false
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer",
+                      "format" : "int32",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "msg" : {
+                      "type" : "string",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "data" : {
+                      "type" : "string",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    }
+                  },
+                  "uniqueItems" : false,
+                  "deprecated" : false,
+                  "nullable" : false,
+                  "tree" : false
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer",
+                      "format" : "int32",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "msg" : {
+                      "type" : "string",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    },
+                    "data" : {
+                      "type" : "string",
+                      "uniqueItems" : false,
+                      "deprecated" : false,
+                      "nullable" : false,
+                      "tree" : false
+                    }
+                  },
+                  "uniqueItems" : false,
+                  "deprecated" : false,
+                  "nullable" : false,
+                  "tree" : false
+                }
+              }
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "ResultVO" : {
+        "title" : "ResultVO",
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "integer",
+            "format" : "int32",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "msg" : {
+            "type" : "string",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "data" : {
+            "type" : "object",
+            "format" : "T",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          }
+        },
+        "uniqueItems" : false,
+        "deprecated" : false,
+        "nullable" : false,
+        "tree" : false
+      },
+      "UserRegisterRespVO" : {
+        "title" : "UserRegisterRespVO",
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64",
+            "description" : "用户ID",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          }
+        },
+        "description" : "用户注册结果",
+        "uniqueItems" : false,
+        "deprecated" : false,
+        "nullable" : false,
+        "tree" : false
+      },
+      "ResultVO«UserRegisterRespVO»" : {
+        "title" : "ResultVO«UserRegisterRespVO»",
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "integer",
+            "format" : "int32",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "msg" : {
+            "type" : "string",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "data" : {
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "$ref" : "#/components/schemas/UserRegisterRespVO",
+            "tree" : false
+          }
+        },
+        "uniqueItems" : false,
+        "deprecated" : false,
+        "nullable" : false,
+        "tree" : false
+      },
+      "ResultVO«UserDetailVO»" : {
+        "title" : "ResultVO«UserDetailVO»",
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "integer",
+            "format" : "int32",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "msg" : {
+            "type" : "string",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "data" : {
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "$ref" : "#/components/schemas/UserDetailVO",
+            "tree" : false
+          }
+        },
+        "uniqueItems" : false,
+        "deprecated" : false,
+        "nullable" : false,
+        "tree" : false
+      },
+      "UserEditFormVO" : {
+        "title" : "UserEditFormVO",
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string",
+            "description" : "真实姓名",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "age" : {
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "年龄",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "sex" : {
+            "type" : "string",
+            "description" : "性别",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false,
+            "enum" : [ "BOY", "GIRL" ]
+          },
+          "avatar" : {
+            "type" : "string",
+            "format" : "binary",
+            "description" : "用户头像",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          }
+        },
+        "description" : "用户信息编辑表单",
+        "uniqueItems" : false,
+        "deprecated" : false,
+        "nullable" : false,
+        "tree" : false
+      },
+      "ResultVO«String»" : {
+        "title" : "ResultVO«String»",
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "integer",
+            "format" : "int32",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "msg" : {
+            "type" : "string",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "data" : {
+            "type" : "string",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          }
+        },
+        "uniqueItems" : false,
+        "deprecated" : false,
+        "nullable" : false,
+        "tree" : false
+      },
+      "PageResultVO" : {
+        "title" : "PageResultVO",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object",
+              "format" : "T",
+              "uniqueItems" : false,
+              "deprecated" : false,
+              "nullable" : false,
+              "tree" : false
+            },
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "total" : {
+            "type" : "integer",
+            "format" : "int64",
+            "description" : "总数",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "size" : {
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "每页多少条数据",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "current" : {
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "当前页码",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "pages" : {
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "总页数",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          }
+        },
+        "uniqueItems" : false,
+        "deprecated" : false,
+        "nullable" : false,
+        "tree" : false
+      },
+      "UserPageReqVO" : {
+        "title" : "UserPageReqVO",
+        "type" : "object",
+        "properties" : {
+          "size" : {
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "每页多少条数据",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "current" : {
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "第几页",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "sort" : {
+            "type" : "string",
+            "description" : "排序条件字符串：排序字段前使用'-'(降序)和'+'(升序)号表示排序规则，多个排序字段用','隔开",
+            "uniqueItems" : false,
+            "example" : "+age,-create_at",
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "sex" : {
+            "type" : "string",
+            "description" : "筛选条件：用户性别",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          }
+        },
+        "description" : "用户列表分页查询条件",
+        "uniqueItems" : false,
+        "deprecated" : false,
+        "nullable" : false,
+        "tree" : false
+      },
+      "UserRegisterFormVO" : {
+        "title" : "UserRegisterFormVO",
+        "type" : "object",
+        "properties" : {
+          "username" : {
+            "type" : "string",
+            "description" : "用户名",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "password" : {
+            "type" : "string",
+            "description" : "密码",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          }
+        },
+        "description" : "用户注册表单",
+        "uniqueItems" : false,
+        "deprecated" : false,
+        "nullable" : false,
+        "tree" : false
+      },
+      "PageResultVO«UserDetailVO»" : {
+        "title" : "PageResultVO«UserDetailVO»",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "uniqueItems" : false,
+              "deprecated" : false,
+              "nullable" : false,
+              "$ref" : "#/components/schemas/UserDetailVO",
+              "tree" : false
+            },
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "total" : {
+            "type" : "integer",
+            "format" : "int64",
+            "description" : "总数",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "size" : {
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "每页多少条数据",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "current" : {
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "当前页码",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "pages" : {
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "总页数",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          }
+        },
+        "uniqueItems" : false,
+        "deprecated" : false,
+        "nullable" : false,
+        "tree" : false
+      },
+      "ResultVO«PageResultVO«UserDetailVO»»" : {
+        "title" : "ResultVO«PageResultVO«UserDetailVO»»",
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "integer",
+            "format" : "int32",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "msg" : {
+            "type" : "string",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "data" : {
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "$ref" : "#/components/schemas/PageResultVO«UserDetailVO»",
+            "tree" : false
+          }
+        },
+        "uniqueItems" : false,
+        "deprecated" : false,
+        "nullable" : false,
+        "tree" : false
+      },
+      "UserDetailVO" : {
+        "title" : "UserDetailVO",
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64",
+            "description" : "用户ID",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "name" : {
+            "type" : "string",
+            "description" : "真实姓名",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "age" : {
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "年龄",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          },
+          "sex" : {
+            "type" : "string",
+            "description" : "性别",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false,
+            "enum" : [ "BOY", "GIRL" ]
+          },
+          "avatar" : {
+            "type" : "string",
+            "description" : "用户头像下载地址",
+            "uniqueItems" : false,
+            "deprecated" : false,
+            "nullable" : false,
+            "tree" : false
+          }
+        },
+        "description" : "用户详情",
+        "uniqueItems" : false,
+        "deprecated" : false,
+        "nullable" : false,
+        "tree" : false
+      }
+    }
+  }
+}

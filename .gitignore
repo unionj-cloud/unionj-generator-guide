@@ -1,0 +1,14 @@
+# IDE
+**/.idea
+**/*.iml
+**/.settings
+**/.project
+**/.classpath
+
+# dev log
+**/logs/
+
+# build
+**/target
+guide-vo/src/main/java
+guide-proto/src/main/java
