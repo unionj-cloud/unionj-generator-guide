@@ -9,7 +9,7 @@
     <artifactId>guide-gen</artifactId>
 
     <properties>
-        <unionj-generator.version>1.6-SNAPSHOT</unionj-generator.version>
+        <unionj-generator.version>1.6.0</unionj-generator.version>
     </properties>
 
     <dependencies>
@@ -29,7 +29,7 @@
             <plugin>
                 <groupId>cloud.unionj</groupId>
                 <artifactId>unionj-generator-maven-plugin</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>0.0.3-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <goals>

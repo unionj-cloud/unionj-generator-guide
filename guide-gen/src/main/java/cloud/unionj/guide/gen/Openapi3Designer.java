@@ -37,7 +37,7 @@ public class Openapi3Designer {
     sb.type("object");
     sb.title("UserRegisterRespVO");
     sb.description("用户注册结果");
-    sb.properties("id", int64("用户ID"));
+    sb.properties("id", string("用户ID"));
   });
 
   public static Schema ResultVOUserRegisterRespVO = generic(gb -> {
@@ -62,7 +62,7 @@ public class Openapi3Designer {
     sb.type("object");
     sb.title("UserDetailVO");
     sb.description("用户详情");
-    sb.properties("id", int64("用户ID"));
+    sb.properties("id", string("用户ID"));
     sb.properties("name", string("真实姓名"));
     sb.properties("age", int32("年龄"));
     sb.properties("sex", enums("性别", new String[]{"BOY", "GIRL"}));
@@ -126,7 +126,7 @@ public class Openapi3Designer {
           .summary("用户信息编辑接口")
           .tags(new String[]{"用户管理模块", "User"})
           .parameters(new Parameter[]{
-              ParameterBuilder.builder().name("id").description("用户ID").in(Parameter.InEnum.QUERY).required(true).schema(int64).build(),
+              ParameterBuilder.builder().name("id").description("用户ID").in(Parameter.InEnum.QUERY).required(true).schema(string).build(),
           })
           .reqSchema(UserEditFormVO)
           .reqSchemaType(PathConfig.SchemaType.FORMDATA)
@@ -137,7 +137,7 @@ public class Openapi3Designer {
           .summary("用户信息查询接口")
           .tags(new String[]{"用户管理模块", "User"})
           .parameters(new Parameter[]{
-              ParameterBuilder.builder().name("id").description("用户ID").in(Parameter.InEnum.QUERY).required(true).schema(int64).build(),
+              ParameterBuilder.builder().name("id").description("用户ID").in(Parameter.InEnum.QUERY).required(true).schema(string).build(),
           })
           .respSchema(ResultVOUserDetailVO)
           .build());
@@ -146,7 +146,7 @@ public class Openapi3Designer {
           .summary("用户头像下载接口")
           .tags(new String[]{"用户管理模块", "User"})
           .parameters(new Parameter[]{
-              ParameterBuilder.builder().name("id").description("用户ID").in(Parameter.InEnum.QUERY).required(true).schema(int64).build(),
+              ParameterBuilder.builder().name("id").description("用户ID").in(Parameter.InEnum.QUERY).required(true).schema(string).build(),
           })
           .respSchema(file("用户头像"))
           .build());

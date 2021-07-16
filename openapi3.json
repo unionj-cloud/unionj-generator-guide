@@ -19,8 +19,7 @@
           "required" : true,
           "deprecated" : false,
           "schema" : {
-            "type" : "integer",
-            "format" : "int64",
+            "type" : "string",
             "uniqueItems" : false,
             "deprecated" : false,
             "nullable" : false,
@@ -136,8 +135,7 @@
           "required" : true,
           "deprecated" : false,
           "schema" : {
-            "type" : "integer",
-            "format" : "int64",
+            "type" : "string",
             "uniqueItems" : false,
             "deprecated" : false,
             "nullable" : false,
@@ -278,8 +276,7 @@
           "required" : true,
           "deprecated" : false,
           "schema" : {
-            "type" : "integer",
-            "format" : "int64",
+            "type" : "string",
             "uniqueItems" : false,
             "deprecated" : false,
             "nullable" : false,
@@ -845,8 +842,7 @@
         "type" : "object",
         "properties" : {
           "id" : {
-            "type" : "integer",
-            "format" : "int64",
+            "type" : "string",
             "description" : "用户ID",
             "uniqueItems" : false,
             "deprecated" : false,
@@ -1244,8 +1240,7 @@
         "type" : "object",
         "properties" : {
           "id" : {
-            "type" : "integer",
-            "format" : "int64",
+            "type" : "string",
             "description" : "用户ID",
             "uniqueItems" : false,
             "deprecated" : false,
